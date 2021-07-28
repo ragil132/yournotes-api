@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 const { ObjectId } = require("mongodb");
+const { logger } = require("./utils/logger");
 
 const addNote = async (req, res, next) => {
   const { notesCollection } = req.app.locals;
@@ -7,13 +8,15 @@ const addNote = async (req, res, next) => {
 
   try {
     if (!title) {
+      logger.error(`${req.originalUrl} - ${req.ip} - title is missing `);
       throw new Error("title is empty!");
     }
 
-    const result = await notesCollection.insertOne(req.body);
-    console.log(result);
+    await notesCollection.insertOne(req.body);
+    logger.info(`${req.originalUrl} - ${req.ip} - Data successfully saved`);
     res.status(200).json("Data successfully saved");
   } catch (error) {
+    logger.error(`${req.originalUrl} - ${req.ip} - ${error} `);
     next(error);
   }
 };
@@ -23,8 +26,10 @@ const getAllNotes = async (req, res, next) => {
   try {
     // find all Notes
     const result = await notesCollection.find().sort({ _id: -1 }).toArray();
+    logger.info(`${req.originalUrl} - ${req.ip} - All notes retrieved`);
     res.status(200).json(result);
   } catch (error) {
+    logger.error(`${req.originalUrl} - ${req.ip} - ${error} `);
     next(error);
   }
 };
@@ -36,8 +41,10 @@ const getNote = async (req, res, next) => {
     const result = await notesCollection.findOne({
       _id: ObjectId(req.params.id),
     });
+    logger.info(`${req.originalUrl} - ${req.ip} - Notes retrieved`);
     res.status(200).json(result);
   } catch (error) {
+    logger.error(`${req.originalUrl} - ${req.ip} - ${error} `);
     next(error);
   }
 };
@@ -47,15 +54,17 @@ const updateNote = async (req, res, next) => {
   const { title, note } = req.body;
   try {
     if (!title) {
+      logger.error(`${req.originalUrl} - ${req.ip} - title is missing `);
       throw new Error("title is empty!");
     }
-    const result = await notesCollection.updateOne(
+    await notesCollection.updateOne(
       { _id: ObjectId(req.params.id) },
       { $set: { title, note } }
     );
-    console.log(result);
+    logger.info(`${req.originalUrl} - ${req.ip} - Data successfully updated`);
     res.status(200).json("Data successfully updated");
   } catch (error) {
+    logger.error(`${req.originalUrl} - ${req.ip} - ${error} `);
     next(error);
   }
 };
@@ -64,12 +73,13 @@ const deleteNote = async (req, res, next) => {
   const { notesCollection } = req.app.locals;
   try {
     // delete data collection
-    const result = await notesCollection.deleteOne({
+    await notesCollection.deleteOne({
       _id: ObjectId(req.params.id),
     });
-    console.log(result);
+    logger.info(`${req.originalUrl} - ${req.ip} - Data successfully deleted`);
     res.status(200).json("Data successfully deleted");
   } catch (error) {
+    logger.error(`${req.originalUrl} - ${req.ip} - ${error} `);
     next(error);
   }
 };
