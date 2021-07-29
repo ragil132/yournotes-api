@@ -12,9 +12,12 @@ const addNote = async (req, res, next) => {
       throw new Error("title is empty!");
     }
 
-    await notesCollection.insertOne(req.body);
+    const result = await notesCollection.insertOne(req.body);
+    const objResult = result;
     logger.info(`${req.originalUrl} - ${req.ip} - Data successfully saved`);
-    res.status(200).json("Data successfully saved");
+    res
+      .status(200)
+      .json({ message: "Data successfully saved", _id: objResult.insertedId });
   } catch (error) {
     logger.error(`${req.originalUrl} - ${req.ip} - ${error} `);
     next(error);
