@@ -37,3 +37,45 @@
 2021-07-29T06:52:01.920Z info: /note/61024b5623b15c9724f6516b - ::1 - Notes retrieved
 2021-07-29T06:52:05.784Z info: /note/61024b5623b15c9724f6516b - ::1 - Data successfully deleted
 2021-07-29T06:52:05.854Z info: /notes - ::1 - All notes retrieved
+2021-07-29T08:16:14.880Z info: Server listening at http://localhost:3001
+2021-07-29T08:18:26.992Z info: /notes - ::1 - All notes retrieved
+2021-07-29T08:18:39.349Z info: /note/60fd905890e24b20847fe3f5 - ::1 - Notes retrieved
+2021-07-29T08:18:57.654Z info: /note/60fec82cdf780a4fbf32124b - ::1 - Notes retrieved
+2021-07-29T13:28:20.399Z info: Server listening at http://localhost:3001
+2021-07-29T13:32:12.627Z info: Server listening at http://localhost:3001
+2021-07-29T13:36:46.563Z info: /notes - ::1 - All notes retrieved
+2021-07-29T13:37:37.419Z error: /note - ::1 - title is missing 
+2021-07-29T13:37:37.420Z error: /note - ::1 - Error: title is empty! 
+2021-07-29T13:37:42.269Z info: /notes - ::1 - All notes retrieved
+2021-07-29T13:37:44.452Z info: /note/610240d7fb1ed682cfdc47a3 - ::1 - Notes retrieved
+2021-07-29T13:38:13.696Z info: /note/610240d7fb1ed682cfdc47a3 - ::1 - Data successfully updated
+2021-07-29T13:38:17.382Z info: /notes - ::1 - All notes retrieved
+2021-07-29T13:38:21.858Z info: /note/610240d7fb1ed682cfdc47a3 - ::1 - Notes retrieved
+2021-07-29T13:38:23.985Z info: /note/610240d7fb1ed682cfdc47a3 - ::1 - Data successfully deleted
+2021-07-29T13:38:24.049Z info: /notes - ::1 - All notes retrieved
+2021-07-29T13:38:27.569Z info: /note/6102362bfb1ed682cfdc47a2 - ::1 - Notes retrieved
+2021-07-29T13:38:44.192Z info: /note - ::1 - Data successfully saved
+2021-07-29T13:38:47.160Z info: /notes - ::1 - All notes retrieved
+2021-07-29T13:46:37.701Z info: /note/6102af648221e5df345f5ee5 - ::1 - Notes retrieved
+2021-07-29T14:24:56.327Z info: /notes - ::1 - All notes retrieved
+2021-07-29T14:32:00.849Z info: /notes - ::1 - All notes retrieved
+2021-07-29T14:43:26.939Z info: /notes - ::1 - All notes retrieved
+2021-07-29T14:46:11.797Z info: /notes - ::1 - All notes retrieved
+2021-07-29T14:54:47.906Z info: /notes - ::1 - All notes retrieved
+2021-07-29T14:55:05.432Z info: /note/60fd905890e24b20847fe3fb - ::1 - Notes retrieved
+2021-08-01T13:11:39.745Z info: Server listening at http://localhost:3001
+2021-08-01T13:18:20.244Z info: /notes - ::1 - All notes retrieved
+2021-08-01T13:21:17.873Z info: /note - ::1 - Data successfully saved
+2021-08-01T13:21:17.882Z info: /note - ::1 - Data successfully saved
+2021-08-01T13:21:20.456Z info: /notes - ::1 - All notes retrieved
+2021-08-01T13:29:16.030Z info: /note/61069fcde3d46a4d5cedbdcd - ::1 - Notes retrieved
+2021-08-01T13:29:19.046Z info: /note/61069fcde3d46a4d5cedbdcd - ::1 - Notes retrieved
+2021-08-01T13:29:26.284Z info: /note/61069fcde3d46a4d5cedbdcd - ::1 - Data successfully deleted
+2021-08-01T13:29:28.574Z info: /notes - ::1 - All notes retrieved
+2021-08-01T13:31:21.355Z info: /note - ::1 - Data successfully saved
+2021-08-01T13:31:24.376Z info: /notes - ::1 - All notes retrieved
+2021-08-01T13:32:03.144Z info: /note/6106a229e3d46a4d5cedbdcf - ::1 - Notes retrieved
+2021-08-01T13:32:08.649Z info: /note/6106a229e3d46a4d5cedbdcf - ::1 - Data successfully updated
+2021-08-01T13:32:10.167Z info: /notes - ::1 - All notes retrieved
+2021-08-01T14:22:08.571Z info: /notes - ::1 - All notes retrieved
+2021-08-01T14:44:42.788Z info: /notes - ::1 - All notes retrieved

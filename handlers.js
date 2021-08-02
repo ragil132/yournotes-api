@@ -12,7 +12,13 @@ const addNote = async (req, res, next) => {
       throw new Error("title is empty!");
     }
 
-    const result = await notesCollection.insertOne(req.body);
+    const data = {
+      ...req.body,
+      createdAt: new Date(Date.now()).toISOString(),
+      updatedAt: new Date(Date.now()).toISOString(),
+    };
+
+    const result = await notesCollection.insertOne(data);
     const objResult = result;
     logger.info(`${req.originalUrl} - ${req.ip} - Data successfully saved`);
     res
@@ -55,14 +61,16 @@ const getNote = async (req, res, next) => {
 const updateNote = async (req, res, next) => {
   const { notesCollection } = req.app.locals;
   const { title, note } = req.body;
+
   try {
     if (!title) {
       logger.error(`${req.originalUrl} - ${req.ip} - title is missing `);
       throw new Error("title is empty!");
     }
+
     await notesCollection.updateOne(
       { _id: ObjectId(req.params.id) },
-      { $set: { title, note } }
+      { $set: { title, note, updatedAt: new Date(Date.now()).toISOString() } }
     );
     logger.info(`${req.originalUrl} - ${req.ip} - Data successfully updated`);
     res.status(200).json("Data successfully updated");
