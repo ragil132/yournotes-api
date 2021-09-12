@@ -1,9 +1,11 @@
 /* eslint-disable no-console */
 const { ObjectId } = require("mongodb");
 const { logger } = require("./utils/logger");
+const { getDb } = require("./utils/dbConnection");
 
 const addNote = async (req, res, next) => {
-  const { notesCollection } = req.app.locals;
+  const db = getDb();
+  const notesCollection = db.collection('notes');
   const { title } = req.body;
 
   try {
@@ -31,7 +33,7 @@ const addNote = async (req, res, next) => {
 };
 
 const getAllNotes = async (req, res, next) => {
-  const { notesCollection } = req.app.locals;
+  const db = getDb();
   try {
     // find all Notes
     const result = await notesCollection.find().sort({ _id: -1 }).toArray();
@@ -44,7 +46,7 @@ const getAllNotes = async (req, res, next) => {
 };
 
 const getNote = async (req, res, next) => {
-  const { notesCollection } = req.app.locals;
+  const db = getDb();
   try {
     // find Notes based on id
     const result = await notesCollection.findOne({
@@ -59,7 +61,7 @@ const getNote = async (req, res, next) => {
 };
 
 const updateNote = async (req, res, next) => {
-  const { notesCollection } = req.app.locals;
+  const db = getDb();
   const { title, note } = req.body;
 
   try {
@@ -81,7 +83,7 @@ const updateNote = async (req, res, next) => {
 };
 
 const deleteNote = async (req, res, next) => {
-  const { notesCollection } = req.app.locals;
+  const db = getDb();
   try {
     // delete data collection
     await notesCollection.deleteOne({
