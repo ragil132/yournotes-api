@@ -19,6 +19,7 @@
     "scripts": {
         "start": "node server.js"
     },
+    "author": "Ragillio Aji",
     "devDependencies": {
         "eslint-config-airbnb": "^18.2.0",
         "eslint-config-prettier": "^6.11.0",
